@@ -63,7 +63,7 @@ const Navbar = () => {
                 <BarChart3 className="h-5 w-5 text-white" />
               </div>
               <span className="ml-3 text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#7743DB] to-[#C3ACD0]">
-                BudgetBot
+                SpendFlow
               </span>
             </Link>
           </div>

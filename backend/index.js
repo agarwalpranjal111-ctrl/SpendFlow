@@ -21,7 +21,7 @@ app.use('/api/expenses', expenseRoutes);
 app.use('/api/whatsapp', whatsappRoutes);
 
 app.get('/health', (req, res) => {
-  res.send('BudgetBot Health Check: Server is running');
+  res.send('SpendFlow Health Check: Server is running');
 });
 
 connectDB();
