@@ -48,20 +48,13 @@ export const AuthProvider = ({ children }) => {
       setUser(user)
       setIsAuthenticated(true)
 
-      // toast({
-      //   title: "Login successful",
-      //   description: `Welcome back, ${user.name}!`,
-      // })
-
       navigate("/dashboard")
-      return true
+      return { success: true }
     } catch (error) {
-      // toast({
-      //   variant: "destructive",
-      //   title: "Login failed",
-      //   description: error.response?.data?.message || "Invalid credentials",
-      // })
-      return false
+      return {
+        success: false,
+        error: error.response?.data?.message || "Invalid credentials",
+      }
     } finally {
       setIsLoading(false)
     }
@@ -79,20 +72,13 @@ export const AuthProvider = ({ children }) => {
       setUser(user)
       setIsAuthenticated(true)
 
-      // toast({
-      //   title: "Registration successful",
-      //   description: `Welcome to XportConnect, ${user.name}!`,
-      // })
-
       navigate("/dashboard")
-      return true
+      return { success: true }
     } catch (error) {
-      // toast({
-      //   variant: "destructive",
-      //   title: "Registration failed",
-      //   description: error.response?.data?.message || "Could not create account",
-      // })
-      return false
+      return {
+        success: false,
+        error: error.response?.data?.message || "Could not create account",
+      }
     } finally {
       setIsLoading(false)
     }
@@ -104,11 +90,6 @@ export const AuthProvider = ({ children }) => {
     setUser(null)
     setIsAuthenticated(false)
     navigate("/login")
-
-    // toast({
-    //   title: "Logged out",
-    //   description: "You have been successfully logged out.",
-    // })
   }
 
   const value = {

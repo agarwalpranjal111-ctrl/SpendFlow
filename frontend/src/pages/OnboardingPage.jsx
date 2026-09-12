@@ -407,7 +407,7 @@ const OnboardingPage = () => {
                     {steps.map((_, index) => (
                       <div
                         key={index}
-                        className={`w-2 h-2 rounded-full transition-colors ₹{
+                        className={`w-2 h-2 rounded-full transition-colors ${
                           index === currentStep ? "bg-[#7743DB]" : "bg-[#C3ACD0]"
                         }`}
                       />
